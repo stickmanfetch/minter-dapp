@@ -14,7 +14,71 @@ const baseUri = "ipfs://NewUriToReplace"; // This will be replaced automatically
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 5000,
+    growEditionSizeTo: 1,
+    layersOrder: [
+      { name: "Wizard Background" },
+      { name: "Wizard Skin" },
+      { name: "Wizard Base" },
+      { name: "Wizard Clothes" },
+      { name: "Wizard Eyes" },
+      { name: "Wizard Mouth" },
+      { name: "Wizard Head Accessory"},
+      { name: "Wizard Weapon"},
+    ],
+  },
+  {
+    growEditionSizeTo: 2,
+    layersOrder: [
+      { name: "Boxer Background" },
+      { name: "Boxer Skin" },
+      { name: "Boxer Base" },
+      { name: "Boxer Eyes" },
+      { name: "Boxer Mouth" },
+      { name: "Boxer Nose"},
+      { name: "Boxer Weapon"},
+    ],
+  },
+  {
+    growEditionSizeTo: 3,
+    layersOrder: [
+      { name: "Archer Background" },
+      { name: "Archer Skin" },
+      { name: "Archer Base" },
+      { name: "Archer Clothes" },
+      { name: "Archer Eyes" },
+      { name: "Archer Mouth" },
+      { name: "Archer Mouth Accessory" },
+      { name: "Archer Nose"},
+      { name: "Archer Weapon"},
+    ],
+  },
+  {
+    growEditionSizeTo: 4,
+    layersOrder: [
+      { name: "Swordsman Background" },
+      { name: "Swordsman Skin" },
+      { name: "Swordsman Base" },
+      { name: "Swordsman Clothes" },
+      { name: "Swordsman Eyes" },
+      { name: "Swordsman Mouth" },
+      { name: "Swordsman Head Accessory" },
+      { name: "Swordsman Weapon"},
+    ],
+  },
+  {
+    growEditionSizeTo: 5,
+    layersOrder: [
+      { name: "Warrior Background" },
+      { name: "Warrior Skin" },
+      { name: "Warrior Base" },
+      { name: "Warrior Clothes" },
+      { name: "Warrior Eyes" },
+      { name: "Warrior Mouth" },
+      { name: "Warrior Weapon"},
+    ],
+  },
+  {
+    growEditionSizeTo: 4999,
     layersOrder: [
       { name: "Background" },
       { name: "Skin" },
@@ -22,16 +86,16 @@ const layerConfigurations = [
       { name: "Clothes" },
       { name: "Eyes" },
       { name: "Mouth" },
-      { name: "Mouth Accessory" },
+      { name: "Head Accessory" },
+      { name: "Banana"},
+      { name: "Mouth Accessory"},
       { name: "Nose"},
       { name: "Weapon"},
-      { name: "Head Accessory"},
-      { name: "Banana"},
     ],
   },
 ];
 
-const shuffleLayerConfigurations = false;
+const shuffleLayerConfigurations = true;
 
 const debugLogs = false;
 
@@ -54,24 +118,24 @@ const CHAIN = 'polygon'; // only rinkeby or polygon
 
 // REQUIRED CONTRACT DETAILS THAT CANNOT BE UPDATED LATER!
 const CONTRACT_NAME = 'The Stick Alliance';
-const CONTRACT_SYMBOL = 'TSA';
+const CONTRACT_SYMBOL = 'STICK';
 const METADATA_UPDATABLE = true; // set to false if you don't want to allow metadata updates after minting
-const OWNER_ADDRESS = '0x07b99965E59d89683DBbbc83fc74786f42897F08';
-const TREASURY_ADDRESS = '0x03AdC733EF4690c891cD8f7fD625981f41473196';
+const OWNER_ADDRESS = '0x98aF8722404f27341f365c8118e83d08AD9F0186';
+const TREASURY_ADDRESS = '0x378Ac8c1DFeb0e5D03027F7d1bb68C8640fB7bdD';
 const MAX_SUPPLY = 5000; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
 const MINT_PRICE = 100; // Minting price per NFT. Rinkeby = ETH, Polygon = MATIC. CANNOT BE UPDATED!
 const TOKENS_PER_MINT = 10; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
 
 // REQUIRED CONTRACT DETAILS THAT CAN BE UPDATED LATER.
-const PUBLIC_MINT_START_DATE = "2022-05-22T11:00:48+00:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00
+const PUBLIC_MINT_START_DATE = "2022-08-11T11:00:48+00:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00
 
 // OPTIONAL CONTRACT DETAILS THAT CAN BE UPDATED LATER.
-const PRESALE_MINT_START_DATE = "2022-04-05T11:00:48+00:00"; // Optional. Eg: 2022-02-08T11:30:48+00:00
+const PRESALE_MINT_START_DATE = "2022-08-09T11:00:48+00:00"; // Optional. Eg: 2022-02-08T11:30:48+00:00
 const ROYALTY_SHARE = 750; // Percentage of the token price that goes to the royalty address. 100 bps = 1%
-const ROYALTY_ADDRESS = "0x7bd730B46ece8B09154fAb40eE08a6637d9B8fD5"; // Address that will receive the royalty
+const ROYALTY_ADDRESS = "0x6C4B387883ffE8fC0bD043585ad75ED856e459C7"; // Address that will receive the royalty
 const BASE_URI = null; // only update if you want to manually set the base uri
 const PREREVEAL_TOKEN_URI = null; // only update if you want to manually set the prereveal token uri
-const PRESALE_WHITELISTED_ADDRESSES = [""]; // only update if you want to manually set the whitelisted addresses
+const PRESALE_WHITELISTED_ADDRESSES = []; // only update if you want to manually set the whitelisted addresses
 
 // ** OPTIONAL **
 let CONTRACT_ADDRESS = "YOUR CONTRACT ADDRESS"; // If you want to manually include it
@@ -80,7 +144,7 @@ let CONTRACT_ADDRESS = "YOUR CONTRACT ADDRESS"; // If you want to manually inclu
 const GENERIC = true; // Set to true if you want to upload generic metas and reveal the real NFTs in the future
 const GENERIC_TITLE = CONTRACT_NAME; // Replace with what you want the generic titles to say if you want it to be different from the contract name.
 const GENERIC_DESCRIPTION = "Who will be your comrade?"; // Replace with what you want the generic descriptions to say.
-const GENERIC_IMAGE = "https://ipfs.io/ipfs/bafybeifymux2fphlblmlvbfsw27lnm7qgjen7y7f3r4n7zmjblgwh3fhs4"; // Replace with your generic image that will display for all NFTs pre-reveal.
+const GENERIC_IMAGE = "https://ipfs.io/ipfs/bafkreifgwfdehm6wsunytjtq7t3pxpgnczaghgecdhd4fhdf6mvxetztaa"; // Replace with your generic image that will display for all NFTs pre-reveal.
 
 // Automatically set contract address if deployed using the deployContract.js script
 try {
