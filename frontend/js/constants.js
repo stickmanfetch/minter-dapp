@@ -1,4 +1,4 @@
-const contractAddress = "0xf72cc8bb9CB24dffe6752b4C0f38E18b271b0fD6"; //Replace with your own contract address
+const contractAddress = "0x472166853404eb47604d8bc03746b50005c44efa"; //Replace with your own contract address
 const chain = 'polygon'; // rinkeby or polygon
 
 const welcome_h1 = "Welcome to The Stick Alliance!!";
